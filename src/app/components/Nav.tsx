@@ -8,6 +8,7 @@ export default function Nav() {
 
   const links = [
     { href: "/", label: "Product Overview" },
+    { href: "/resources", label: "Files & Resources" },
     { href: "/next-steps", label: "Next Steps" },
   ];
 

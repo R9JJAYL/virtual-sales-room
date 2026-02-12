@@ -41,32 +41,6 @@ const timeline = [
   },
 ];
 
-const resources = [
-  {
-    title: "Beamery Product Overview",
-    type: "PDF",
-    description: "A two-page executive summary of the Beamery platform.",
-  },
-  {
-    title: "Enterprise ROI Calculator",
-    type: "Spreadsheet",
-    description:
-      "Customisable model showing projected savings and efficiency gains.",
-  },
-  {
-    title: "Customer Case Studies",
-    type: "PDF",
-    description:
-      "How VMware, Autodesk, and others transformed their talent strategy.",
-  },
-  {
-    title: "Security & Compliance",
-    type: "PDF",
-    description:
-      "SOC 2 Type II, GDPR, and enterprise security documentation.",
-  },
-];
-
 export default function NextSteps() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -297,50 +271,6 @@ export default function NextSteps() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources */}
-      <section className="py-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-2">Resources</h2>
-          <p className="text-white/50 mb-8">
-            Everything you need to evaluate Beamery and build your internal
-            business case.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {resources.map((resource) => (
-              <div
-                key={resource.title}
-                className="group flex items-start gap-4 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-beamery-purple/20 transition-all cursor-pointer"
-              >
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-beamery-purple/15 flex items-center justify-center text-beamery-accent group-hover:scale-110 transition-transform">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-medium">{resource.title}</span>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-white/10 text-white/40 uppercase">
-                      {resource.type}
-                    </span>
-                  </div>
-                  <p className="text-sm text-white/40">{resource.description}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
