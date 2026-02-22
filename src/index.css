@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 107, 0, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* Native range slider with filled track via CSS custom properties */
+  .slider-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 20px;
+  }
+
+  .slider-input::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to right,
+      var(--accent, #FF6B00) 0%,
+      var(--accent, #FF6B00) var(--fill-pct, 50%),
+      #2A2A2A var(--fill-pct, 50%),
+      #2A2A2A 100%
+    );
+  }
+
+  .slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--accent, #FF6B00);
+    margin-top: -7px;
+    box-shadow: 0 0 10px color-mix(in srgb, var(--accent, #FF6B00) 50%, transparent);
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+
+  .slider-input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 18px color-mix(in srgb, var(--accent, #FF6B00) 70%, transparent);
+    transform: scale(1.15);
+  }
+
+  .slider-input::-webkit-slider-thumb:active {
+    box-shadow: 0 0 22px color-mix(in srgb, var(--accent, #FF6B00) 85%, transparent);
+    transform: scale(1.2);
+  }
+
+  /* Firefox */
+  .slider-input::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: #2A2A2A;
+  }
+
+  .slider-input::-moz-range-progress {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent, #FF6B00);
+  }
+
+  .slider-input::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--accent, #FF6B00);
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+  }
+
+  .slider-input::-moz-range-thumb:hover {
+    box-shadow: 0 0 18px rgba(255, 107, 0, 0.7);
+  }
+}
+
+@layer components {
+  .glow-card {
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .glow-card:hover {
+    border-color: rgba(255, 107, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.08), inset 0 1px 0 rgba(255, 107, 0, 0.05);
+  }
+}

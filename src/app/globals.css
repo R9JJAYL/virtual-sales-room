@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-@theme {
-  --color-beamery-purple: #6B2FA0;
-  --color-beamery-blue: #3B82F6;
-  --color-beamery-dark: #1A0A2E;
-  --color-beamery-light: #F5F0FF;
-  --color-beamery-accent: #8B5CF6;
-}
