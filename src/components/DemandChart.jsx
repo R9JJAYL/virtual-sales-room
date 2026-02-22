@@ -119,8 +119,7 @@ export default function DemandChart({ data }) {
                   fill: '#0F0F0F',
                   style: { filter: `drop-shadow(0 0 4px ${sku.color})` },
                 }}
-                animationDuration={600}
-                animationEasing="ease-out"
+                isAnimationActive={false}
               />
             ))}
           </AreaChart>
