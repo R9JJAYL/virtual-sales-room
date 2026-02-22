@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import {
   AreaChart,
   Area,
@@ -60,15 +59,6 @@ function CustomLegend({ payload }) {
 }
 
 export default function DemandChart({ data }) {
-  // Compute a stepped y-axis max so the scale doesn't auto-fit tightly.
-  // This makes demand changes visually obvious — lines grow/shrink instead of axis rescaling.
-  const yMax = useMemo(() => {
-    const maxVal = Math.max(...data.flatMap((row) => SKUS.map((s) => row[s.key] || 0)))
-    // Round up to the nearest step: 10k for values under 50k, 20k for under 100k, 50k above
-    const step = maxVal < 50000 ? 10000 : maxVal < 100000 ? 20000 : 50000
-    return Math.ceil(maxVal / step) * step
-  }, [data])
-
   return (
     <div className="glow-card bg-neutonic-surface/80 backdrop-blur-sm rounded-2xl border border-neutonic-border p-6 shadow-lg shadow-black/20">
       <div className="flex items-center justify-between mb-4">
@@ -94,7 +84,7 @@ export default function DemandChart({ data }) {
               tickLine={false}
             />
             <YAxis
-              domain={[0, yMax]}
+              domain={[0, 80000]}
               tickFormatter={compactNumber}
               tick={{ fill: '#ffffff30', fontSize: 11 }}
               axisLine={false}
